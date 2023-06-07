@@ -1,0 +1,12 @@
+.account-info-bg {
+  background: linear-gradient(
+    183.33deg,
+    #fff6e6 9.56%,
+    rgba(248, 237, 216, 0) 124.27%
+  );
+  border-radius: 0px 0px 32px 32px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
