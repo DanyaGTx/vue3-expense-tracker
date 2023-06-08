@@ -21,13 +21,14 @@
       </h2>
       <div>
         <button
+          @click="switchTabToAll"
           class="text-[#7F3DFF] font-medium text-sm p-[8px] pl-3 pr-3 bg-[#EEE5FF] rounded-[40px]"
         >
           See All
         </button>
       </div>
     </div>
-    <div class="max-w-[800px] m-auto mt-3">
+    <div class="mt-3 max-h-[500px] overflow-y-auto">
       <component omponent :is="tabs[currentTab]" class="tab"></component>
     </div>
   </div>
@@ -40,6 +41,10 @@ import Month from '../HomePage/Tabs/MonthTab.vue'
 import Year from '../HomePage/Tabs/YearTab.vue'
 
 import { ref } from 'vue'
+import { useTransactionsStore } from '../../store/allTransactions'
+
+const transactionsStore = useTransactionsStore()
+
 const tabs = {
   Today,
   Week,
@@ -47,4 +52,8 @@ const tabs = {
   Year,
 }
 const currentTab = ref('Today')
+
+const switchTabToAll = () => {
+  currentTab.value = 'Year'
+}
 </script>
